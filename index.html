@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Lakásfelújítás Debrecenben — generálkivitelezés, panel- és családi ház felújítás, festés, burkolás, villany- és gépészeti munkák. Kérjen ajánlatot gyorsan!" />
+    <meta property="og:title" content="Lakásfelújítás Debrecen" />
+    <meta property="og:description" content="Komplett lakásfelújítás Debrecenben: megbízható csapat, tiszta munka, garancia." />
+    <title>Lakásfelújítás Debrecen — generálkivitelezés, teljes felújítás</title>
+    <link rel="canonical" href="https://lakasfelujitasdebrecen.hu/" />
+    <meta property="og:url" content="https://lakasfelujitasdebrecen.hu/" />
+    <style>
+      /* --- Alapok & reset --- */
+      *, *::before, *::after { box-sizing: border-box; }
+      :root {
+        --bg: #0f172a;        /* sötét pala */
+        --surface: #111827;   /* szürkés fekete */
+        --text: #e5e7eb;      /* világos szürke */
+        --muted: #94a3b8;     /* halvány szürke */
+        --brand: #22d3ee;     /* cián */
+        --brand-600: #0891b2;
+        --ring: rgba(34, 211, 238, 0.35);
+        --radius: 16px;
+      }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background: radial-gradient(1200px 600px at 20% -10%, #0b1220 10%, transparent 60%),
+                    radial-gradient(900px 500px at 100% 0%, #0b2a35 10%, transparent 60%),
+                    var(--bg);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      .container { width: min(1100px, 92%); margin: 0 auto; }
+      .skip-link {
+        position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+      }
+      .skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; padding: .5rem .75rem; background: #111827; color: white; border-radius: 8px; }
+
+      /* --- Fejléc / navigáció --- */
+      header {
+        position: sticky; top: 0; z-index: 50;
+        backdrop-filter: blur(8px);
+        background: color-mix(in oklab, var(--surface) 70%, transparent);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+      .nav {
+        display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 0;
+      }
+      .logo { display: inline-flex; align-items: center; gap: .6rem; font-weight: 700; letter-spacing: .3px; }
+      .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 20px var(--brand); }
+      .menu {
+        display: flex; align-items: center; gap: 1rem;
+      }
+      .menu a { color: var(--muted); padding: .4rem .6rem; border-radius: 8px; }
+      .menu a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        padding: .6rem .95rem; border-radius: 999px; background: var(--brand);
+        color: #0b1320; font-weight: 600; box-shadow: 0 8px 24px rgba(34,211,238,.25);
+      }
+      .btn:hover { background: var(--brand-600); color: white; }
+      .burger { display: none; background: none; border: 0; color: var(--text); font-size: 1.25rem; }
+
+      /* --- Hős szekció --- */
+      .hero { padding: clamp(3rem, 7vw, 6rem) 0; }
+      .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+      .eyebrow { color: var(--brand); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; font-size: .8rem; }
+      h1 { font-size: clamp(2rem, 4.8vw, 3.2rem); line-height: 1.1; margin: .6rem 0 1rem; }
+      .lead { color: var(--muted); font-size: clamp(1rem, 2vw, 1.15rem); }
+      .cta { margin-top: 1.25rem; display: flex; gap: .8rem; flex-wrap: wrap; }
+      .card {
+        background: color-mix(in oklab, var(--surface) 85%, transparent);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: var(--radius);
+        padding: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,.25) inset;
+      }
+
+      /* --- Jellemzők --- */
+      .features { padding: 2rem 0 3rem; }
+      .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .feature { padding: 1.2rem; }
+      .feature h3 { margin: .4rem 0 .3rem; font-size: 1.1rem; }
+      .k { color: var(--muted); font-size: .95rem; }
+
+      /* --- Kapcsolat űrlap --- */
+      .contact { padding: 2rem 0 4rem; }
+      form { display: grid; gap: .9rem; }
+      label { font-weight: 600; font-size: .95rem; }
+      input, textarea { width: 100%; color: var(--text); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: .7rem .85rem; }
+      input:focus, textarea:focus { outline: 2px solid var(--ring); outline-offset: 2px; }
+      textarea { min-height: 120px; resize: vertical; }
+
+      /* --- Lábléc --- */
+      footer { border-top: 1px solid rgba(255,255,255,0.06); color: var(--muted); padding: 1.2rem 0 3rem; }
+
+      /* --- Mobil nézet --- */
+      @media (max-width: 900px) {
+        .hero-grid { grid-template-columns: 1fr; }
+        .features-grid { grid-template-columns: 1fr; }
+        .menu { display: none; }
+        .menu.open { display: flex; position: absolute; right: 4%; left: 4%; top: 60px; flex-direction: column; background: var(--surface); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: .6rem; }
+        .burger { display: inline-flex; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#tartalom">Ugrás a tartalomra</a>
+
+    <header aria-label="Fő navigáció">
+      <div class="container nav">
+        <a class="logo" href="#" aria-label="Főoldal">
+          <span class="logo-dot" aria-hidden="true"></span>
+          <span>Lakásfelújítás Debrecen</span>
+        </a>
+
+        <nav>
+          <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Menü megnyitása">☰</button>
+          <div id="menu" class="menu" role="menubar">
+            <a role="menuitem" href="#rolunk">Rólunk</a>
+            <a role="menuitem" href="#szolgaltatasok">Szolgáltatások</a>
+            <a role="menuitem" href="#kapcsolat">Kapcsolat</a>
+            <a role="menuitem" class="btn" href="#kapcsolat">Ajánlatot kérek</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="tartalom">
+      <!-- Hős szekció -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">Debrecen és környéke</div>
+            <h1>Lakásfelújítás Debrecen — komplett kivitelezés, gyors határidő</h1>
+            <p class="lead">Generálkivitelezés, bontástól az átadásig: festés, burkolás, villany, víz-gáz-fűtés. Ingyenes felmérés és tanácsadás — kérjen ajánlatot!</p>
+            <div class="cta">
+              <a class="btn" href="#szolgaltatasok">Funkciók megtekintése</a>
+              <a class="btn" style="background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--text)" href="#kapcsolat">Lépj kapcsolatba</a>
+            </div>
+          </div>
+          <div class="card" aria-label="Illusztráció">
+            <img src="https://images.unsplash.com/photo-1529336953121-a0f91c7d6428?q=80&w=1200&auto=format&fit=crop" alt="Laptopon megnyitott modern weboldal illusztráció" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Jellemzők -->
+      <section id="szolgaltatasok" class="features container">
+        <div class="features-grid">
+          <article class="feature card">
+            <div class="eyebrow">Reszponzív</div>
+            <h3>Minden kijelzőn szép</h3>
+            <p class="k">Rugalmas rácsok, olvasható tipográfia és érintésbarát elemek mobilon, tableten és asztali gépen is.</p>
+          </article>
+          <article class="feature card">
+            <div class="eyebrow">Gyors</div>
+            <h3>Kevés kód, gyors betöltés</h3>
+            <p class="k">Nincs külső keretrendszer. Tiszta HTML+CSS+JS, optimalizált képekkel.</p>
+          </article>
+          <article class="feature card">
+            <div class="eyebrow">Hozzáférhető</div>
+            <h3>A11y alapelvek szerint</h3>
+            <p class="k">Kontrasztos színek, fókusz-jelölések, ARIA attribútumok és billentyűzetről használható menü.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Kapcsolat -->
+      <section id="kapcsolat" class="contact">
+        <div class="container">
+          <div class="card">
+            <h2>Írj üzenetet</h2>
+            <form id="contact-form" aria-label="Kapcsolatfelvételi űrlap">
+              <div>
+                <label for="name">Név</label>
+                <input id="name" name="name" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div>
+                <label for="message">Üzenet</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <div>
+                <button class="btn" type="submit">Küldés</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <small>© <span id="year"></span> Saját Weboldal. Minden jog fenntartva.</small>
+      </div>
+    </footer>
+
+    <script>
+      // Mobil menü logika
+      const burger = document.getElementById('burger');
+      const menu = document.getElementById('menu');
+      burger?.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('open');
+        burger.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      // Egyszerű űrlapkezelés (demo)
+      document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(e.target));
+        alert(`Köszönjük, ${data.name}! Hamarosan jelentkezünk a(z) ${data.email} címen.`);
+        e.target.reset();
+      });
+
+      // Év frissítése
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
