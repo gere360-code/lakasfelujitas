@@ -38,7 +38,7 @@
       "Nyíregyháza",
       "Hajdú-Bihar vármegye"
     ],
-    "description": "Teljeskörű lakásfelújítás Debrecenben, Debrecen 50 km-es körzetében és Nyíregyházán. Fürdőszoba-felújítás, panellakás-felújítás és befektetési célú ingatlanok felújítása.",
+    "description": "Teljeskörű lakásfelújítás Debrecenben, Debrecen 50 km-es vonzáskörzetében és Nyíregyházán. Fürdőszoba-felújítás, panellakás-felújítás és befektetési célú ingatlanok felújítása.",
     "serviceType": [
       "Lakásfelújítás",
       "Fürdőszoba-felújítás",
@@ -604,6 +604,41 @@
         padding: 58px 0;
       }
     }
+    .floating-call {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 2000;
+  background: var(--gold);
+  color: var(--white);
+  padding: 15px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: 0.2s ease;
+}
+
+.floating-call:hover {
+  transform: translateY(-2px);
+  opacity: 0.94;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-bottom: 78px;
+  }
+
+  .floating-call {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    text-align: center;
+    border-radius: 14px;
+    padding: 16px 20px;
+    font-size: 17px;
+  }
+}
   </style>
 </head>
 
@@ -850,7 +885,7 @@
 
           <div class="card">
             <img class="reference-cover" src="ref1-cover.JPEG" alt="60 m² panel lakás teljeskörű felújítása">
-            <h3>60 m² panel lakás teljeskörű felújítása</h3>
+            <h3>70 m² panel lakás teljeskörű felújítása</h3>
             <p>Komplett panellakás-felújítás több szakági munkafolyamat összehangolásával.</p>
 
             <details class="project-gallery">
@@ -868,7 +903,7 @@
 
           <div class="card">
             <img class="reference-cover" src="ref2-cover.JPEG" alt="65 m² panel lakás teljeskörű felújítása">
-            <h3>65 m² panel lakás teljeskörű felújítása</h3>
+            <h3>69 m² panel lakás teljeskörű felújítása</h3>
             <p>Teljes belső felújítás modernizálási és esztétikai munkákkal együtt.</p>
 
             <details class="project-gallery">
@@ -989,7 +1024,7 @@
 
         <details class="faq-item">
           <summary>Milyen területen vállalunk munkát?</summary>
-          <p>Debrecenben, Debrecen 50 km-es körzetében, valamint Nyíregyházán vállalunk lakásfelújítási munkákat.</p>
+          <p>Debrecenben, Debrecen 50 km-es vonzáskörzetében, valamint Nyíregyházán vállalunk lakásfelújítási munkákat.</p>
         </details>
 
         <details class="faq-item">
@@ -1018,7 +1053,7 @@
         </details>
         
         <details class="faq-item">
-          <summary>Számlával és garanciával történik a munka?</summary>
+          <summary>Számlát kapok az elvégzett munkáról?</summary>
           <p>Igen, a kivitelezés számlával és garanciával történik.</p>
         </details>
 
@@ -1075,5 +1110,6 @@
     </div>
   </footer>
 
+  <a class="floating-call" href="tel:+36204086331">Hívás most</a>
 </body>
 </html>
