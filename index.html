@@ -13,7 +13,7 @@
   <meta property="og:description" content="Lakásfelújítás Debrecenben átlátható ajánlattal, garanciával és számlával. Ingyenes helyszíni felmérés, 24 órán belüli visszajelzés.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lakasfelujitasdebrecen.hu/">
-  <meta name="theme-color" content="#3A332C">
+  <meta name="theme-color" content="#2B2621">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S564SSPD0G"></script>
@@ -54,8 +54,8 @@
 
   <style>
     :root {
-      --dark: #3A332C;
-      --dark2: #4A4037;
+      --dark: #2B2621;
+      --dark2: #3A332C;
       --gold: #7C5F35;
       --white: #FFFFFF;
       --soft: #F6F1EA;
@@ -86,6 +86,11 @@
       text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
       max-width: 1160px;
       margin: 0 auto;
@@ -96,7 +101,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(58, 51, 44, 0.97);
+      background: rgba(43, 38, 33, 0.97);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(10px);
     }
@@ -189,7 +194,7 @@
       padding: 95px 0 85px;
       background:
         radial-gradient(circle at top left, rgba(124,95,53,0.26), transparent 38%),
-        linear-gradient(135deg, #3A332C 0%, #4A4037 100%);
+        linear-gradient(135deg, #2B2621 0%, #3A332C 100%);
       border-bottom: 1px solid var(--border);
     }
 
@@ -381,20 +386,69 @@
       line-height: 1;
     }
 
-    .image-placeholder {
-      height: 220px;
+    .reference-cover {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
       border-radius: 12px;
-      border: 1px dashed rgba(255,255,255,0.28);
-      background:
-        linear-gradient(135deg, rgba(124,95,53,0.20), rgba(255,255,255,0.055));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-size: 14px;
+      border: 1px solid var(--border);
       margin-bottom: 16px;
-      text-align: center;
-      padding: 20px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .project-gallery {
+      margin-top: 18px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    .project-gallery summary {
+      cursor: pointer;
+      color: var(--white);
+      font-weight: 700;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(124,95,53,0.5);
+      padding: 10px 14px;
+      border-radius: 10px;
+      transition: 0.2s ease;
+    }
+
+    .project-gallery summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .project-gallery summary::after {
+      content: "+";
+      color: var(--gold);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .project-gallery[open] summary::after {
+      content: "−";
+    }
+
+    .project-gallery summary:hover {
+      background: rgba(124,95,53,0.12);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
     }
 
     .references-note {
@@ -465,7 +519,7 @@
         top: 72px;
         left: 0;
         right: 0;
-        background: rgba(58, 51, 44, 0.99);
+        background: rgba(43, 38, 33, 0.99);
         border-bottom: 1px solid var(--border);
         display: grid;
         gap: 0;
@@ -501,6 +555,10 @@
       .contact-grid {
         grid-template-columns: 1fr;
       }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 600px) {
@@ -530,8 +588,16 @@
         text-align: center;
       }
 
-      .image-placeholder {
-        height: 190px;
+      .reference-cover {
+        height: 205px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-grid img {
+        height: 105px;
       }
 
       section {
@@ -778,50 +844,125 @@
           <div class="section-label">Referenciáink</div>
           <h2>Korábbi felújítási munkáink</h2>
           <p>
-            A referenciafotók később kerülnek feltöltésre. A szekció már elő van készítve, így a képek egyszerűen beilleszthetők lesznek.
+            Minden referencia kártyán egy fő kép látható, a további képek pedig lenyitható galériában kapnak helyet.
           </p>
         </div>
 
         <div class="grid grid-3">
+
           <div class="card">
-            <div class="image-placeholder">Kép helye</div>
+            <img class="reference-cover" src="ref1-cover.jpg" alt="60 m² panel lakás teljeskörű felújítása">
             <h3>60 m² panel lakás teljeskörű felújítása</h3>
             <p>Komplett panellakás-felújítás több szakági munkafolyamat összehangolásával.</p>
+
+            <details class="project-gallery">
+              <summary>További képek megtekintése</summary>
+              <div class="gallery-grid">
+                <img src="ref1-1.jpg" alt="60 m² panel lakás felújítás - részlet 1">
+                <img src="ref1-2.jpg" alt="60 m² panel lakás felújítás - részlet 2">
+                <img src="ref1-3.jpg" alt="60 m² panel lakás felújítás - részlet 3">
+                <img src="ref1-4.jpg" alt="60 m² panel lakás felújítás - részlet 4">
+                <img src="ref1-5.jpg" alt="60 m² panel lakás felújítás - részlet 5">
+                <img src="ref1-6.jpg" alt="60 m² panel lakás felújítás - részlet 6">
+              </div>
+            </details>
           </div>
 
           <div class="card">
-            <div class="image-placeholder">Kép helye</div>
+            <img class="reference-cover" src="ref2-cover.jpg" alt="65 m² panel lakás teljeskörű felújítása">
             <h3>65 m² panel lakás teljeskörű felújítása</h3>
             <p>Teljes belső felújítás modernizálási és esztétikai munkákkal együtt.</p>
+
+            <details class="project-gallery">
+              <summary>További képek megtekintése</summary>
+              <div class="gallery-grid">
+                <img src="ref2-1.jpg" alt="65 m² panel lakás felújítás - részlet 1">
+                <img src="ref2-2.jpg" alt="65 m² panel lakás felújítás - részlet 2">
+                <img src="ref2-3.jpg" alt="65 m² panel lakás felújítás - részlet 3">
+                <img src="ref2-4.jpg" alt="65 m² panel lakás felújítás - részlet 4">
+                <img src="ref2-5.jpg" alt="65 m² panel lakás felújítás - részlet 5">
+                <img src="ref2-6.jpg" alt="65 m² panel lakás felújítás - részlet 6">
+              </div>
+            </details>
           </div>
 
           <div class="card">
-            <div class="image-placeholder">Kép helye</div>
+            <img class="reference-cover" src="ref3-cover.jpg" alt="Újépítésű lakás befejezése">
             <h3>Újépítésű lakás befejezése</h3>
             <p>Befejező munkák és belső kivitelezési feladatok újépítésű lakásban.</p>
+
+            <details class="project-gallery">
+              <summary>További képek megtekintése</summary>
+              <div class="gallery-grid">
+                <img src="ref3-1.jpg" alt="Újépítésű lakás befejezése - részlet 1">
+                <img src="ref3-2.jpg" alt="Újépítésű lakás befejezése - részlet 2">
+                <img src="ref3-3.jpg" alt="Újépítésű lakás befejezése - részlet 3">
+                <img src="ref3-4.jpg" alt="Újépítésű lakás befejezése - részlet 4">
+                <img src="ref3-5.jpg" alt="Újépítésű lakás befejezése - részlet 5">
+                <img src="ref3-6.jpg" alt="Újépítésű lakás befejezése - részlet 6">
+              </div>
+            </details>
           </div>
 
           <div class="card">
-            <div class="image-placeholder">Kép helye</div>
+            <img class="reference-cover" src="ref4-cover.jpg" alt="51 m² panel lakás teljeskörű felújítása">
             <h3>51 m² panel lakás teljeskörű felújítása</h3>
             <p>Kisebb alapterületű panellakás átfogó, piacképes felújítása.</p>
+
+            <details class="project-gallery">
+              <summary>További képek megtekintése</summary>
+              <div class="gallery-grid">
+                <img src="ref4-1.jpg" alt="51 m² panel lakás felújítás - részlet 1">
+                <img src="ref4-2.jpg" alt="51 m² panel lakás felújítás - részlet 2">
+                <img src="ref4-3.jpg" alt="51 m² panel lakás felújítás - részlet 3">
+                <img src="ref4-4.jpg" alt="51 m² panel lakás felújítás - részlet 4">
+                <img src="ref4-5.jpg" alt="51 m² panel lakás felújítás - részlet 5">
+                <img src="ref4-6.jpg" alt="51 m² panel lakás felújítás - részlet 6">
+              </div>
+            </details>
           </div>
 
           <div class="card">
-            <div class="image-placeholder">Kép helye</div>
+            <img class="reference-cover" src="ref5-cover.jpg" alt="135 m² családi ház teljeskörű felújítása">
             <h3>135 m² családi ház teljeskörű felújítása</h3>
             <p>Nagyobb volumenű családi házas felújítás teljes körű kivitelezéssel.</p>
+
+            <details class="project-gallery">
+              <summary>További képek megtekintése</summary>
+              <div class="gallery-grid">
+                <img src="ref5-1.jpg" alt="135 m² családi ház felújítás - részlet 1">
+                <img src="ref5-2.jpg" alt="135 m² családi ház felújítás - részlet 2">
+                <img src="ref5-3.jpg" alt="135 m² családi ház felújítás - részlet 3">
+                <img src="ref5-4.jpg" alt="135 m² családi ház felújítás - részlet 4">
+                <img src="ref5-5.jpg" alt="135 m² családi ház felújítás - részlet 5">
+                <img src="ref5-6.jpg" alt="135 m² családi ház felújítás - részlet 6">
+              </div>
+            </details>
           </div>
 
           <div class="card">
-            <div class="image-placeholder">Kép helye</div>
+            <img class="reference-cover" src="ref6-cover.jpg" alt="Családi ház fürdőszobájának teljeskörű felújítása gázkazán cseréjével">
             <h3>Fürdőszoba felújítása gázkazán cseréjével</h3>
             <p>Családi ház fürdőszobájának teljeskörű felújítása kapcsolódó gépészeti korszerűsítéssel.</p>
+
+            <details class="project-gallery">
+              <summary>További képek megtekintése</summary>
+              <div class="gallery-grid">
+                <img src="ref6-1.jpg" alt="Fürdőszoba felújítás gázkazán cserével - részlet 1">
+                <img src="ref6-2.jpg" alt="Fürdőszoba felújítás gázkazán cserével - részlet 2">
+                <img src="ref6-3.jpg" alt="Fürdőszoba felújítás gázkazán cserével - részlet 3">
+                <img src="ref6-4.jpg" alt="Fürdőszoba felújítás gázkazán cserével - részlet 4">
+                <img src="ref6-5.jpg" alt="Fürdőszoba felújítás gázkazán cserével - részlet 5">
+                <img src="ref6-6.jpg" alt="Fürdőszoba felújítás gázkazán cserével - részlet 6">
+              </div>
+            </details>
           </div>
+
         </div>
 
         <p class="references-note">
-          Később a „Kép helye” dobozok helyére saját referenciafotók kerülhetnek.
+          Javasolt fájlnevek: <strong>ref1-cover.jpg</strong>, <strong>ref1-1.jpg</strong>, <strong>ref1-2.jpg</strong> stb. 
+          Egy projekthez elég 1 fő kép és 4–6 további kép.
         </p>
       </div>
     </section>
