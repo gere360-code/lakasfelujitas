@@ -3,8 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lakásfelújítás Debrecen</title>
-  <meta name="description" content="Teljes körű lakásfelújítás Debrecenben: festés, burkolás, villanyszerelés, vízszerelés, fürdő és konyha felújítás.">
+
+  <title>Teljeskörű lakásfelújítás Debrecenben - PG Property Kft.</title>
+  <meta name="description" content="Teljeskörű lakásfelújítás Debrecenben, 50 km-es körzetében és Nyíregyházán. Fürdőszoba-felújítás, panellakás-felújítás, befektetési lakások felújítása átlátható ajánlattal, számlával és garanciával.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lakasfelujitasdebrecen.hu/">
+
+  <meta property="og:title" content="Teljeskörű lakásfelújítás Debrecenben - PG Property Kft.">
+  <meta property="og:description" content="Lakásfelújítás Debrecenben átlátható ajánlattal, garanciával és számlával. Ingyenes helyszíni felmérés, 24 órán belüli visszajelzés.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lakasfelujitasdebrecen.hu/">
+  <meta name="theme-color" content="#3A332C">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S564SSPD0G"></script>
@@ -12,108 +21,521 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-S564SSPD0G');
   </script>
 
+  <!-- Local Business SEO adat -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "PG Property Kft.",
+    "url": "https://lakasfelujitasdebrecen.hu/",
+    "telephone": "+36204086331",
+    "email": "hello@lakasfelujitasdebrecen.hu",
+    "areaServed": [
+      "Debrecen",
+      "Nyíregyháza",
+      "Hajdú-Bihar vármegye"
+    ],
+    "description": "Teljeskörű lakásfelújítás Debrecenben, Debrecen 50 km-es körzetében és Nyíregyházán. Fürdőszoba-felújítás, panellakás-felújítás és befektetési célú ingatlanok felújítása.",
+    "serviceType": [
+      "Lakásfelújítás",
+      "Fürdőszoba-felújítás",
+      "Panellakás-felújítás",
+      "Burkolás",
+      "Festés",
+      "Villanyszerelés",
+      "Vízszerelés",
+      "Ajtó- és ablakbeépítés"
+    ]
+  }
+  </script>
+
   <style>
+    :root {
+      --dark: #3A332C;
+      --dark2: #4A4037;
+      --gold: #7C5F35;
+      --white: #FFFFFF;
+      --soft: #F6F1EA;
+      --text: #F4EFE8;
+      --muted: #D8CEC1;
+      --border: rgba(255,255,255,0.14);
+      --shadow: 0 14px 35px rgba(0,0,0,0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #0f172a;
-      color: #e5e7eb;
-      line-height: 1.6;
+      font-family: Arial, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
-    header {
-      background: #020617;
-      padding: 50px 20px;
-      text-align: center;
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(58, 51, 44, 0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
     }
 
-    h1, h2, h3 {
-      color: white;
+    .topbar-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--white);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--white);
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .menu-button {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1002;
+    }
+
+    .menu-button span,
+    .menu-button span::before,
+    .menu-button span::after {
+      content: "";
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 10px;
+      transition: 0.25s ease;
+      position: relative;
+    }
+
+    .menu-button span::before {
+      position: absolute;
+      top: -7px;
+    }
+
+    .menu-button span::after {
+      position: absolute;
+      top: 7px;
+    }
+
+    .menu-toggle:checked + .menu-button span {
+      background: transparent;
+    }
+
+    .menu-toggle:checked + .menu-button span::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle:checked + .menu-button span::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+
+    .hero {
+      padding: 95px 0 85px;
+      background:
+        radial-gradient(circle at top left, rgba(124,95,53,0.26), transparent 38%),
+        linear-gradient(135deg, #3A332C 0%, #4A4037 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .eyebrow,
+    .section-label {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 14px;
     }
 
     h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+      margin: 0 0 20px;
+      color: var(--white);
+      font-size: 50px;
+      line-height: 1.12;
+      letter-spacing: -1px;
     }
 
     h2 {
-      margin-bottom: 20px;
-      font-size: 30px;
+      margin: 0 0 14px;
+      color: var(--white);
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -0.4px;
     }
 
-    section {
-      margin-top: 50px;
+    h3 {
+      color: var(--white);
+      margin: 0 0 10px;
+      font-size: 22px;
     }
 
-    .card {
-      background: #020617;
-      padding: 24px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    p {
+      margin-top: 0;
+    }
+
+    .hero p {
+      max-width: 790px;
+      margin: 0 0 16px;
+      color: var(--text);
+      font-size: 18px;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 28px 0 30px;
+    }
+
+    .hero-points span {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--white);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .btn {
-      background: #22c55e;
-      color: black;
-      padding: 12px 20px;
-      border-radius: 8px;
       display: inline-block;
-      margin-top: 15px;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--gold);
+      color: var(--white);
     }
 
     .btn:hover {
-      opacity: 0.9;
+      transform: translateY(-1px);
+      opacity: 0.92;
     }
 
-    .hero-text {
-      max-width: 700px;
-      margin: auto;
+    section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      max-width: 820px;
+      margin-bottom: 30px;
+    }
+
+    .section-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 22px;
     }
 
-    footer {
-      background: #020617;
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(124,95,53,0.24), rgba(255,255,255,0.055));
+      border: 1px solid rgba(124,95,53,0.42);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .card p:last-child,
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .tick-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .tick-list div {
+      position: relative;
+      padding-left: 28px;
+      color: var(--text);
+    }
+
+    .tick-list div::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .service-order {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
       text-align: center;
-      padding: 30px 20px;
-      margin-top: 60px;
-      color: #94a3b8;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 14px;
       font-size: 14px;
     }
 
-    .highlight {
-      color: #22c55e;
-      font-weight: bold;
+    .steps-number {
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 8px;
+      line-height: 1;
     }
 
-    @media (max-width: 600px) {
+    .image-placeholder {
+      height: 220px;
+      border-radius: 12px;
+      border: 1px dashed rgba(255,255,255,0.28);
+      background:
+        linear-gradient(135deg, rgba(124,95,53,0.20), rgba(255,255,255,0.055));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 16px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .references-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .reviews-placeholder {
+      text-align: center;
+      padding: 36px 24px;
+    }
+
+    .reviews-placeholder p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .faq-item {
+      margin-bottom: 14px;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      color: var(--white);
+      font-weight: 700;
+      padding: 18px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid var(--border);
+    }
+
+    .faq-item p {
+      margin: 0;
+      padding: 16px 18px 4px;
+      color: var(--muted);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+    }
+
+    .contact-item strong {
+      color: var(--white);
+    }
+
+    .footer {
+      padding: 30px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 991px) {
+      .menu-button {
+        display: flex;
+      }
+
+      .nav {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(58, 51, 44, 0.99);
+        border-bottom: 1px solid var(--border);
+        display: grid;
+        gap: 0;
+        padding: 10px 20px 20px;
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.25s ease;
+      }
+
+      .nav a {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 16px;
+      }
+
+      .menu-toggle:checked ~ .nav {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
       h1 {
-        font-size: 32px;
+        font-size: 38px;
       }
 
       h2 {
-        font-size: 24px;
+        font-size: 30px;
       }
 
+      .grid-2,
+      .grid-3,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
       .container {
-        padding: 16px;
+        padding: 0 16px;
+      }
+
+      .hero {
+        padding: 70px 0 60px;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+
+      .hero p,
+      .section-header p {
+        font-size: 16px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .image-placeholder {
+        height: 190px;
+      }
+
+      section {
+        padding: 58px 0;
       }
     }
   </style>
@@ -121,135 +543,391 @@
 
 <body>
 
-  <header>
-    <div class="container">
-      <div class="hero-text">
-        <h1>Lakásfelújítás Debrecen</h1>
-        <p><strong>Teljes körű lakásfelújítás gyorsan, precízen, garanciával.</strong></p>
-        <p>Festés, burkolás, villanyszerelés, vízszerelés – mindent egy kézben, stresszmentesen.</p>
-        <a class="btn" href="tel:+36204086331">Hívás most</a>
-      </div>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">PG Property Kft.</div>
+
+      <input class="menu-toggle" type="checkbox" id="menu-toggle">
+      <label class="menu-button" for="menu-toggle" aria-label="Menü megnyitása">
+        <span></span>
+      </label>
+
+      <nav class="nav">
+        <a href="#bemutatkozas">Bemutatkozás</a>
+        <a href="#szolgaltatasok">Szolgáltatások</a>
+        <a href="#munkamenet">Folyamat</a>
+        <a href="#referenciak">Referenciák</a>
+        <a href="#gyik">GYIK</a>
+        <a href="#kapcsolat">Kapcsolat</a>
+      </nav>
     </div>
   </header>
 
-  <div class="container">
+  <main>
 
-    <section>
-      <h2>Teljes körű lakásfelújítás Debrecenben</h2>
-      <div class="card">
-        <p>Ha lakásfelújítást tervezel, biztosan tudod, hogy mennyi stresszel járhat egy rosszul megszervezett kivitelezés. Csúszó határidők, eltűnő szakemberek, váratlan plusz költségek és folyamatos idegeskedés – sokan sajnos ezt tapasztalják.</p>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Teljeskörű lakásfelújítás Debrecenben</div>
 
-        <p><span class="highlight">Mi pontosan ezt akarjuk elkerülni.</span></p>
+          <h1>Átlátható ajánlat, garancia és számla – egy kézben szervezett felújítás</h1>
 
-        <p>Olyan szolgáltatást nyújtunk Debrecenben és környékén, ahol minden egy kézben van. Nem kell külön festőt, burkolót, villanyszerelőt vagy vízszerelőt keresned – a teljes felújítási folyamatot megszervezzük és elvégezzük.</p>
+          <p>
+            A PG Property Kft. teljes körű lakásfelújítást vállal Debrecenben, Debrecen 50 km-es körzetében és Nyíregyházán.
+            Fő területeink a fürdőszoba-felújítás, a panellakások teljes felújítása, valamint a befektetési célú lakások gyors,
+            piacképes korszerűsítése.
+          </p>
 
-        <p>Célunk, hogy a felújítás ne nyűg legyen, hanem egy jól átlátható, pontosan szervezett folyamat, ahol tudod, mire számíthatsz, mennyibe kerül és mikorra készül el.</p>
-      </div>
-    </section>
+          <p>
+            A munkafolyamatokat bontástól az átadásig összehangoltan kezeljük, így Önnek nem kell külön szakembereket keresnie
+            és szerveznie.
+          </p>
 
-    <section>
-      <h2>Miért minket válassz?</h2>
-      <div class="card">
-        <p>✔ Pontos határidők, kiszámítható munkavégzés</p>
-        <p>✔ Korrekt, előre egyeztetett árak</p>
-        <p>✔ Tiszta, precíz kivitelezés</p>
-        <p>✔ Folyamatos kommunikáció a teljes munka során</p>
-        <p>✔ Több éves tapasztalat lakásfelújításban</p>
-        <p>✔ Megbízható csapat, akikre számíthatsz</p>
-      </div>
-    </section>
+          <div class="hero-points">
+            <span>Ingyenes helyszíni felmérés</span>
+            <span>24 órán belüli visszajelzés</span>
+            <span>Tételes írásos ajánlat</span>
+            <span>Számlával és garanciával</span>
+          </div>
 
-    <section>
-      <h2>Szolgáltatásaink</h2>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Festés, glettelés</h3>
-          <p>Teljes falfelújítást végzünk, a hibák javításától a végső festésig. Repedések javítása, glettelés, csiszolás, több rétegű festés, igényes kivitelezés.</p>
-        </div>
-
-        <div class="card">
-          <h3>Burkolás</h3>
-          <p>Csempe, járólap, laminált padló lerakása precízen és esztétikusan. Fürdőszobák, konyhák, előszobák és teljes lakások burkolását is vállaljuk.</p>
-        </div>
-
-        <div class="card">
-          <h3>Villanyszerelés</h3>
-          <p>Kapcsolók, konnektorok cseréje, új vezetékek kialakítása, világítás korszerűsítés, elektromos hálózat felújítás modern igényekhez igazítva.</p>
-        </div>
-
-        <div class="card">
-          <h3>Vízszerelés</h3>
-          <p>Csőcsere, szaniterek bekötése, fürdőszoba vízrendszerének kiépítése, mosdó, WC, zuhanyzó és csaptelepek beszerelése.</p>
-        </div>
-
-        <div class="card">
-          <h3>Fürdőszoba felújítás</h3>
-          <p>Teljes körű fürdőszoba átalakítás bontástól a kész állapotig. Burkolás, vízszerelés, szaniterek beépítése, praktikus és modern kialakítás.</p>
-        </div>
-
-        <div class="card">
-          <h3>Konyha felújítás</h3>
-          <p>Konyhai burkolatok, elektromos és vízkiállások áthelyezése, előkészítő munkák és teljes felújítási kivitelezés egy helyen.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:+36204086331">Hívás most</a>
+            <a class="btn btn-secondary" href="mailto:hello@lakasfelujitasdebrecen.hu">Ajánlatkérés e-mailben</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>Hogyan dolgozunk?</h2>
-      <div class="card">
-        <p><strong>1. Kapcsolatfelvétel</strong> – telefonon vagy üzenetben felveszed velünk a kapcsolatot.</p>
-        <p><strong>2. Helyszíni felmérés</strong> – átbeszéljük az igényeidet és megnézzük a feladatot.</p>
-        <p><strong>3. Árajánlat</strong> – részletes, átlátható ajánlatot adunk.</p>
-        <p><strong>4. Kivitelezés</strong> – a megbeszélt ütemezés szerint dolgozunk.</p>
-        <p><strong>5. Átadás</strong> – tiszta, rendezett, kész állapotban adjuk át a munkát.</p>
+    <section id="bemutatkozas">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Bemutatkozás</div>
+          <h2>Felújítás, amely nem a bizonytalanságról szól</h2>
+          <p>
+            Egy lakásfelújításnál a legnagyobb kockázat gyakran nem maga a munka, hanem a szervezetlenség:
+            csúszó határidők, változó árak, nehezen elérhető szakemberek és egymásra váró munkafolyamatok.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="highlight-box">
+            <p>
+              A PG Property Kft. célja, hogy a felújítás átlátható, kiszámítható és prémium érzetű folyamat legyen.
+              Tételes írásos ajánlattal, számlás kivitelezéssel és garanciával dolgozunk.
+            </p>
+            <p>
+              Különösen nagy hangsúlyt helyezünk a határidők betartására, az átlátható árakra és arra, hogy a munkát
+              befektetői szemlélettel is értelmezni tudjuk: legyen szó eladásra, kiadásra vagy saját használatra készülő lakásról.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Amit nyújtunk</h3>
+            <div class="tick-list">
+              <div>Teljes felújítás egy kézben</div>
+              <div>Ingyenes helyszíni felmérés</div>
+              <div>24 órán belüli visszajelzés</div>
+              <div>Tételes írásos árajánlat minden munkára</div>
+              <div>Számlás, garanciális kivitelezés</div>
+              <div>Debrecen, 50 km-es körzet és Nyíregyháza</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Miért fontos a minőségi kivitelezés?</h2>
-      <div class="card">
-        <p>Egy rosszul kivitelezett felújítás rengeteg plusz költséget és kellemetlenséget okozhat. A felváló burkolat, a repedező falak, az elrontott festés vagy a hibás elektromos rendszer nemcsak bosszantó, hanem hosszabb távon sokkal többe is kerülhet.</p>
+    <section id="szolgaltatasok">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Szolgáltatások</div>
+          <h2>Szolgáltatásaink munkafolyamat szerinti sorrendben</h2>
+          <p>
+            A teljes lakásfelújítás lépéseit logikus sorrendben, egymásra építve kezeljük.
+          </p>
+        </div>
 
-        <p>Mi olyan munkát végzünk, amely nemcsak első ránézésre szép, hanem hosszú távon is tartós és megbízható. Számunkra nem az a cél, hogy gyorsan túllegyünk rajta, hanem hogy olyan végeredményt adjunk át, amivel valóban elégedett leszel.</p>
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="service-order">01</div>
+            <h3>Bontás és előkészítés</h3>
+            <p>Régi burkolatok, szaniterek, belső elemek bontása, a munkaterület előkészítése a következő fázisokra.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-order">02</div>
+            <h3>Vízszerelés</h3>
+            <p>Vizes kiállások, csőcserék, fürdőszobai és konyhai gépészeti előkészítések.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-order">03</div>
+            <h3>Villanyszerelés</h3>
+            <p>Új vezetékek, kapcsolók, konnektorok, világítási pontok és elektromos korszerűsítések kialakítása.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-order">04</div>
+            <h3>Ajtó- és ablakbeépítés</h3>
+            <p>Belső nyílászárók, ajtók és kapcsolódó elemek beépítése vagy cseréje.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-order">05</div>
+            <h3>Faljavítás és glettelés</h3>
+            <p>Falhibák javítása, felületek előkészítése, glettelés és csiszolás a minőségi végeredményhez.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-order">06</div>
+            <h3>Burkolás</h3>
+            <p>Hideg- és melegburkolatok kivitelezése fürdőszobában, konyhában, előszobában és teljes lakásokban.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-order">07</div>
+            <h3>Festés</h3>
+            <p>Tiszta, igényes festési munkák a végső, esztétikus megjelenés érdekében.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-order">08</div>
+            <h3>Fürdőszoba-felújítás</h3>
+            <p>Komplett fürdőszoba-felújítás bontással, gépészettel, burkolással és szaniterek beépítésével.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-order">09</div>
+            <h3>Teljes lakásfelújítás</h3>
+            <p>Panellakások és más lakóingatlanok teljes körű felújítása, egy kézben tartott szervezéssel.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-order">10</div>
+            <h3>Befektetési célú lakások</h3>
+            <p>Kiadásra vagy eladásra készülő lakások piacképes, költségtudatos és gyors felújítása.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-order">11</div>
+            <h3>Konyhafelújítás</h3>
+            <p>Konyhai burkolatok, víz- és villanykiállások, valamint előkészítő munkák kivitelezése.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-order">12</div>
+            <h3>Generálkivitelezés</h3>
+            <p>Komplexebb lakásfelújítási projektek összehangolása, több szakági munkafolyamat kezelésével.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-   <section>
-  <h2>Referenciáink</h2>
+    <section id="munkamenet">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Folyamat</div>
+          <h2>Így zajlik a közös munka</h2>
+          <p>
+            A kivitelezés lépéseit előre meghatározott rendszer szerint kezeljük, hogy a felújítás végig követhető legyen.
+          </p>
+        </div>
 
-  <div class="grid">
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="steps-number">1</div>
+            <h3>Kapcsolatfelvétel</h3>
+            <p>Telefonon vagy e-mailben egyeztetjük az alapadatokat és a felújítási igényt.</p>
+          </div>
 
-    <div class="card">
-      <img src="1.jpg" style="width:100%; border-radius:10px;">
-      <h3>Fürdőszoba felújítás – Debrecen</h3>
-      <p>Teljes felújítás modern zuhanykabinnal és új burkolattal.</p>
+          <div class="card">
+            <div class="steps-number">2</div>
+            <h3>Helyszíni felmérés</h3>
+            <p>Az ingyenes helyszíni felmérés során áttekintjük a műszaki állapotot és a tervezett munkákat.</p>
+          </div>
+
+          <div class="card">
+            <div class="steps-number">3</div>
+            <h3>Tételes ajánlat</h3>
+            <p>Minden munkára írásos, átlátható ajánlat készül, hogy pontosan lásd, mire számíthatsz.</p>
+          </div>
+
+          <div class="card">
+            <div class="steps-number">4</div>
+            <h3>Kivitelezés</h3>
+            <p>A munkafolyamatokat egy kézben szervezzük, nem az ügyfélnek kell külön szakembereket koordinálnia.</p>
+          </div>
+
+          <div class="card">
+            <div class="steps-number">5</div>
+            <h3>Átadás</h3>
+            <p>A munkát rendezett, átlátható módon adjuk át, számlával és garanciával.</p>
+          </div>
+
+          <div class="card">
+            <div class="steps-number">6</div>
+            <h3>Utókövetés</h3>
+            <p>A cél nem csak a munka elvégzése, hanem az, hogy a végeredmény hosszú távon is vállalható legyen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="referenciak">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Referenciáink</div>
+          <h2>Korábbi felújítási munkáink</h2>
+          <p>
+            A referenciafotók később kerülnek feltöltésre. A szekció már elő van készítve, így a képek egyszerűen beilleszthetők lesznek.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="image-placeholder">Kép helye</div>
+            <h3>60 m² panel lakás teljeskörű felújítása</h3>
+            <p>Komplett panellakás-felújítás több szakági munkafolyamat összehangolásával.</p>
+          </div>
+
+          <div class="card">
+            <div class="image-placeholder">Kép helye</div>
+            <h3>65 m² panel lakás teljeskörű felújítása</h3>
+            <p>Teljes belső felújítás modernizálási és esztétikai munkákkal együtt.</p>
+          </div>
+
+          <div class="card">
+            <div class="image-placeholder">Kép helye</div>
+            <h3>Újépítésű lakás befejezése</h3>
+            <p>Befejező munkák és belső kivitelezési feladatok újépítésű lakásban.</p>
+          </div>
+
+          <div class="card">
+            <div class="image-placeholder">Kép helye</div>
+            <h3>51 m² panel lakás teljeskörű felújítása</h3>
+            <p>Kisebb alapterületű panellakás átfogó, piacképes felújítása.</p>
+          </div>
+
+          <div class="card">
+            <div class="image-placeholder">Kép helye</div>
+            <h3>135 m² családi ház teljeskörű felújítása</h3>
+            <p>Nagyobb volumenű családi házas felújítás teljes körű kivitelezéssel.</p>
+          </div>
+
+          <div class="card">
+            <div class="image-placeholder">Kép helye</div>
+            <h3>Fürdőszoba felújítása gázkazán cseréjével</h3>
+            <p>Családi ház fürdőszobájának teljeskörű felújítása kapcsolódó gépészeti korszerűsítéssel.</p>
+          </div>
+        </div>
+
+        <p class="references-note">
+          Később a „Kép helye” dobozok helyére saját referenciafotók kerülhetnek.
+        </p>
+      </div>
+    </section>
+
+    <section id="velemenyek">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Ügyfélvélemények</div>
+          <h2>Ügyfeleink mondták</h2>
+          <p>
+            Ez a rész később Google értékelésekkel vagy közvetlen ügyfélvisszajelzésekkel tölthető fel.
+          </p>
+        </div>
+
+        <div class="card reviews-placeholder">
+          <p>Az ügyfélvélemények szekció elő van készítve, a visszajelzések később kerülnek feltöltésre.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gyik">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Gyakori kérdések</div>
+          <h2>Gyakori kérdések lakásfelújítás előtt</h2>
+          <p>
+            Néhány fontos kérdés, amit a legtöbb érdeklődő feltesz a lakásfelújítás megkezdése előtt.
+          </p>
+        </div>
+
+        <details class="faq-item">
+          <summary>Milyen területen vállal munkát a PG Property Kft.?</summary>
+          <p>Debrecenben, Debrecen 50 km-es körzetében, valamint Nyíregyházán vállalunk lakásfelújítási munkákat.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Ingyenes a helyszíni felmérés?</summary>
+          <p>Igen, a helyszíni felmérés ingyenes. A felmérés alapján készülhet el a pontos, tételes írásos ajánlat.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Mennyi időn belül kapok visszajelzést?</summary>
+          <p>A megkeresésekre 24 órán belül visszajelzést adunk.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kapok írásos árajánlatot?</summary>
+          <p>Igen, minden munkára tételes, írásos árajánlatot adunk.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Számlával és garanciával történik a munka?</summary>
+          <p>Igen, a kivitelezés számlával és garanciával történik.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Befektetési célú lakások felújítását is vállalják?</summary>
+          <p>Igen, kiadásra vagy eladásra szánt lakások felújítását is vállaljuk, befektetői szemlélettel.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="kapcsolat">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Kapcsolat</div>
+          <h2>Kérjen ajánlatot telefonon vagy e-mailben</h2>
+          <p>
+            Elsődlegesen telefonos megkeresést várunk. E-mailben is lehet ajánlatot kérni, a visszajelzés 24 órán belül történik.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Miért érdemes most kapcsolatba lépni?</h3>
+            <div class="tick-list">
+              <div>Ingyenes helyszíni felmérés</div>
+              <div>24 órán belüli visszajelzés</div>
+              <div>Tételes, írásos ajánlat</div>
+              <div>Számlás, garanciális kivitelezés</div>
+              <div>Teljes felújítás egy kézben</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Elérhetőségek</h3>
+            <p class="contact-item"><strong>Cégnév:</strong> PG Property Kft.</p>
+            <p class="contact-item"><strong>Telefon:</strong> <a href="tel:+36204086331">+36 20 408 6331</a></p>
+            <p class="contact-item"><strong>E-mail:</strong> <a href="mailto:hello@lakasfelujitasdebrecen.hu">hello@lakasfelujitasdebrecen.hu</a></p>
+            <p class="contact-item"><strong>Terület:</strong> Debrecen és 50 km-es körzete, valamint Nyíregyháza</p>
+
+            <div class="cta-row" style="margin-top: 22px;">
+              <a class="btn btn-primary" href="tel:+36204086331">Hívás most</a>
+              <a class="btn btn-secondary" href="mailto:hello@lakasfelujitasdebrecen.hu">E-mail küldése</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 PG Property Kft. – Teljeskörű lakásfelújítás Debrecenben
     </div>
-
-    <div class="card">
-      <img src="2.jpg" style="width:100%; border-radius:10px;">
-      <h3>Teljes lakás festés</h3>
-      <p>Glettelés és festés rövid határidővel.</p>
-    </div>
-
-  </div>
-</section>
-
-    <section>
-      <h2>Kapcsolat</h2>
-      <div class="card">
-        <p><strong>Gere Zsolt</strong> </p>
-        <p><strong>Telefon:</strong> +36 20 408 6331</p>
-        <p><strong>Email:</strong> hello@lakasfelujitasdebrecen.hu</p>
-        <p>Hívj bizalommal, vagy kérj ajánlatot üzenetben. Igyekszünk gyorsan reagálni, és egyeztetni a felmérés időpontját.</p>
-        <a class="btn" href="tel:+36204086331">Hívás most</a>
-      </div>
-    </section>
-
-  </div>
-
-  <footer>
-    © 2026 Lakásfelújítás Debrecen – Minden jog fenntartva
   </footer>
 
 </body>
