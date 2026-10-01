@@ -114,12 +114,16 @@
       gap: 20px;
     }
 
-    .brand {
-      color: var(--white);
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
+    .brand-logo {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
 
     .nav {
       display: flex;
@@ -646,7 +650,9 @@
 
   <header class="topbar">
     <div class="container topbar-inner">
-      <div class="brand">PG Property Kft.</div>
+      <a class="brand-logo" href="#">
+  <img src="PG_Property_logo_kicsi.png" alt="PG Property Kft. logó">
+</a>
 
       <input class="menu-toggle" type="checkbox" id="menu-toggle">
       <label class="menu-button" for="menu-toggle" aria-label="Menü megnyitása">
